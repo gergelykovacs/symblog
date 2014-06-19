@@ -39,7 +39,8 @@ use_assetic_controller (true):
 Create the *MySQL* database and user you have set `$> mysql -u root -h 127.0.0.1 -p`.
 
 ```SQL
-CREATE DATABASE IF NOT EXISTS `symblog` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE IF NOT EXISTS `symblog` 
+DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 CREATE USER 'symblog'@'%' IDENTIFIED BY 'passwd123';
 
@@ -59,7 +60,7 @@ Eventually, you should set up the local web service as follows and you are done.
 
 #### Host configuration
 
-Here and now please note that *.lh* refers to your localhost so the `/etc/hosts` file should contain the following line.
+Here and now please note that *.lh* refers to your localhost so the `$> vim /etc/hosts` file should contain the following line.
 
 ```Bash
 127.0.0.1    prod.symblog.lh    test.symblog.lh    dev.symblog.lh
@@ -78,6 +79,10 @@ and it is for convenience only *(NOT FOR PRODUCTION SERVICE)*.
 *Please be aware of [Nginx IfEvil](http://wiki.nginx.org/IfIsEvil "Nginx IfIsEvil") when you read the configuration below.*
 
 ```Nginx
+#
+# @file: /etc/nginx/sites-available/lh.symblog.conf
+# symlink: /etc/nginx/sites-enabled/lh.symblog.conf -> @file
+#
 server {
     listen 80;
     server_name ~^(?<symenv>prod|test|dev).symblog.lh$;
