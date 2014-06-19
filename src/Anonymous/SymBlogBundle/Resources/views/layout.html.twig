@@ -2,8 +2,18 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link href="{{ asset('bundles/anonymoussymblog/css/blog.css') }}" type="text/css" rel="stylesheet" />
-    <link href="{{ asset('bundles/anonymoussymblog/css/sidebar.css') }}" type="text/css" rel="stylesheet" />
+
+    {% stylesheets 
+        '@AnonymousSymBlogBundle/Resources/public/css/*' 
+    %}
+        <link href="{{ asset_url }}" rel="stylesheet" media="screen" />
+    {% endstylesheets %}
+
+    {% javascripts
+        '@AnonymousSymBlogBundle/Resources/public/js/*'
+    %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
 {% endblock %}
 
 {% block sidebar %}
