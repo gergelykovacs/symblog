@@ -1,7 +1,41 @@
 SymBlog
 =======
 
-Continued Symfony 2.5 tutorial completion based on the [turorial](http://tutorial.symblog.co.uk/ "Symfony2 Tutorial").
+Continued [Symfony](http://symfony.com/ "Symfony") 2.5 Tutorial completion based on the [blog](http://tutorial.symblog.co.uk/ "Symfony2 Tutorial").
+
+#### Install
+
+To install the project you need to have the PHP dependency manager called [Composer](https://getcomposer.org/ "Composer").
+
+```Bash
+$> mkdir /var/www/lh.symblog && cd /var/www/lh.symblog
+$> git clone https://github.com/gergelykovacs/symblog.git .
+
+.... [ clones the repo into lh.symblog ]
+
+$> composer install
+
+... [ installs all the dependencies and requirements while at the end please fill these ]
+
+Creating the "app/config/parameters.yml" file
+Some parameters are missing. Please provide them.
+database_driver (pdo_mysql): 
+database_host (127.0.0.1): 
+database_port (null): 
+database_name (symfony): symblog
+database_user (root): symblog
+database_password (null): passwd123
+mailer_transport (smtp): 
+mailer_host (127.0.0.1): 
+mailer_user (null): 
+mailer_password (null): 
+locale (en): 
+secret (ThisTokenIsNotSoSecretChangeIt): 
+debug_toolbar (true): 
+debug_redirects (false): 
+use_assetic_controller (true):
+```
+Eventually, you should set up the local web service as follows and you are done.
 
 #### Host configuration
 
