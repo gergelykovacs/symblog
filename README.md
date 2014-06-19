@@ -1,16 +1,27 @@
-symblog
+SymBlog
 =======
 
-Symfony 2.5 Tutorial
-
+Continued Symfony 2.5 tutorial completion based on the [turorial](http://tutorial.symblog.co.uk/ "Symfony2 Tutorial").
 
 #### Host configuration
+
+Here and now please note that *.lh* refers to your localhost so the `/etc/hosts` file should contain the following line.
 
 ```Bash
 127.0.0.1    prod.symblog.lh    test.symblog.lh    dev.symblog.lh
 ```
 
 #### Nginx configuration
+
+You can access the project's different states by the URIs
+
+- **Production** http://prod.symblog.lh
+- **Testing** http://test.symblog.lh
+- **Development** http://dev.symblog.lh
+
+and it is for convenience only *(NOT FOR PRODUCTION SERVICE)*.
+
+*Please be aware of [Nginx IfEvil](http://wiki.nginx.org/IfIsEvil "Nginx IfIsEvil") when you read the configuration below.*
 
 ```Nginx
 server {
