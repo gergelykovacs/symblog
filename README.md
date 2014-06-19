@@ -35,6 +35,26 @@ debug_toolbar (true):
 debug_redirects (false): 
 use_assetic_controller (true):
 ```
+
+Create the *MySQL* database and user you have set `$> mysql -u root -h 127.0.0.1 -p`.
+
+```SQL
+CREATE DATABASE IF NOT EXISTS `symblog` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+CREATE USER 'symblog'@'%' IDENTIFIED BY 'passwd123';
+
+GRANT ALL PRIVILEGES ON symblog.* TO 'symblog'@'%';
+
+FLUSH PRIVILEGES;
+```
+
+Build the table schema and load test data into the new database.
+
+```Bash
+$> bin/console doctrine:schema:create
+$> bin/console doctrine:fixtures:load
+```
+
 Eventually, you should set up the local web service as follows and you are done.
 
 #### Host configuration
