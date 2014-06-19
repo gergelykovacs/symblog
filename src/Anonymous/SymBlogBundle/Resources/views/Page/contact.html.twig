@@ -1,0 +1,38 @@
+{% extends 'AnonymousSymBlogBundle::layout.html.twig' %}
+
+{% block title %}Contact{% endblock%}
+
+{% block body %}
+    <header>
+        <h1>Contact SymBlog</h1>
+    </header>
+
+    {% for flashMessage in app.session.flashbag.get('blogger-notice') %}
+        <div class="blogger-notice">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    <p>
+    Nulla non turpis sit amet nibh convallis malesuada vel ut urna. Nullam consectetur libero eget justo fermentum, 
+    eu molestie augue congue. In scelerisque ante nunc, eget pulvinar sapien fermentum vitae. Aliquam mattis feugiat purus a eleifend. 
+    Fusce justo justo, semper et mi a, vehicula dignissim est. Curabitur luctus eu tellus ullamcorper mollis. Vivamus quis massa a nibh 
+    posuere dapibus. Sed dapibus magna ac hendrerit fermentum. Pellentesque pellentesque volutpat orci ac pharetra. Cras eu dapibus leo. 
+    Mauris volutpat tellus velit, at lobortis lectus eleifend a. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+    </p>
+
+    <p>Want to contact SymBlog?</p>
+
+    <form action="{{ path('anonymous_sym_blog_contact') }}" method="post" {{ form_enctype(form) }} class="blogger">
+        {{ form_errors(form) }}
+
+        {{ form_row(form.name) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.subject) }}
+        {{ form_row(form.body) }}
+
+        {{ form_rest(form) }}
+
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock %}

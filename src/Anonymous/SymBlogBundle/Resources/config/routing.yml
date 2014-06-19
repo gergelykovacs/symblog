@@ -1,0 +1,39 @@
+#
+# SymBlog Routing
+#
+anonymous_sym_blog_homepage:
+    pattern: /
+    defaults: { _controller: AnonymousSymBlogBundle:Page:index }
+    requirements:
+        _method: GET
+
+anonymous_sym_blog_contact:
+    pattern: /contact
+    defaults: { _controller: AnonymousSymBlogBundle:Page:contact }
+    requirements:
+        _method: GET|POST
+
+anonymous_sym_blog_about:
+    pattern: /about
+    defaults: { _controller: AnonymousSymBlogBundle:Page:about }
+    requirements:
+        _method: GET
+
+anonymous_sym_blog_show:
+    pattern: /{id}/{slug}/{comments}
+    defaults: { _controller: AnonymousSymBlogBundle:Blog:show, comments: true }
+    requirements:
+        _method: GET
+        id: \d+
+
+anonymous_sym_blog_comment_create:
+    pattern: /comment/{blog_id}
+    defaults: { _controller: AnonymousSymBlogBundle:Comment:create }
+    requirements:
+        _method: POST
+        blog_id: \d+
+
+# Came with the default bundle.
+anonymous_sym_blog_default:
+    pattern:  /hello/{name}
+    defaults: { _controller: AnonymousSymBlogBundle:Default:index }

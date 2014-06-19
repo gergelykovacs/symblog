@@ -1,0 +1,6 @@
+services:
+    blog.twig.extension:
+        class: Anonymous\SymBlogBundle\Twig\Extensions\AnonymousSymBlogExtension
+        tags:
+            - { name: twig.extension }
+

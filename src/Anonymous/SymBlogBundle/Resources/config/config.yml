@@ -1,0 +1,5 @@
+parameters:
+    blog.emails.contact_email: anonymous.gergo@gmail.com
+    blog.emails.system_email: noreply@symblog.tld
+    blog.emails.enquiry_subject: Contact enquiry from symblog
+    blog.comments.latest_comment_limit: 5

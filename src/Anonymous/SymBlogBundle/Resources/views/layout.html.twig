@@ -1,0 +1,11 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/anonymoussymblog/css/blog.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('bundles/anonymoussymblog/css/sidebar.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block sidebar %}
+    {% render(controller("AnonymousSymBlogBundle:Page:sidebar")) %}
+{% endblock %}
