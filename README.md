@@ -15,7 +15,7 @@ $> git clone https://github.com/gergelykovacs/symblog.git .
 
 $> composer install
 
-... [ installs all the dependencies and requirements while at the end please fill these ]
+... [ installs all the requirements and finally please fill these ]
 
 Creating the "app/config/parameters.yml" file
 Some parameters are missing. Please provide them.
