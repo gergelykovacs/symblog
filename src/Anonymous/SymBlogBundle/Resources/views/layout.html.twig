@@ -5,12 +5,20 @@
 
     {% stylesheets 
         '@AnonymousSymBlogBundle/Resources/public/css/*' 
+        output='css/blog.css' 
+        filter='yui_css'
     %}
         <link href="{{ asset_url }}" rel="stylesheet" media="screen" />
     {% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
 
     {% javascripts
-        '@AnonymousSymBlogBundle/Resources/public/js/*'
+        '@AnonymousSymBlogBundle/Resources/public/js/*' 
+        output='js/blog.js' 
+        filter='yui_js'
     %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}

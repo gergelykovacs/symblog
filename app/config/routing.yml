@@ -1,4 +1,4 @@
-ebola_media_sym_blog:
+anonymous_sym_blog:
     resource: "@AnonymousSymBlogBundle/Resources/config/routing.yml"
     prefix: /
 

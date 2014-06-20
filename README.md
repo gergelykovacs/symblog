@@ -119,3 +119,18 @@ server {
         }
 }
 ```
+
+#### Test
+
+To run all the PHPUnit tests:
+
+```Bash
+$> cp php phpunit.xml.dist phpunit.xml
+$> phpunit --stderr --debug 
+```
+
+#### Further
+
+The tutorial and functionalities will be extended later.
+
+The *YUI Compressor* is added (.jar) for Assetic support but will be removed later.
